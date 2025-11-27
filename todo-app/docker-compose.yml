@@ -29,6 +29,10 @@ services:
 
   # Node.js API
   api:
+    volumes:
+      - ./api:/app
+      - ./app/node_modules
+    command: npm run dev
     build:
       context: ./api
       dockerfile: Dockerfile
